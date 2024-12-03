@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Data Consultancy</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/service.css">
+    <link rel="stylesheet" href="assets/css/scrolbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#hero" class="logo">
+                <!-- <img src="./assets/images/logo2.png" alt="Logo" class="logo-image">  -->
+                <span class="logo-text">Tomma Vlaemynck</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-background"></div> <!-- Background element -->
+            <div class="hero-content"> <!-- Content element -->
+                <div class="container">
+                    <h1>Data & AI Consultancy</h1>
+                    <p>Innovative solutions for data-driven decisions.</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                        <a href="#services" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section Placeholders -->
+        <div id="about"></div>
+        <div id="services"></div>
+        <div id="contact"></div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Tomma Vlaemynck. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript to Load Sections -->
+    <script>
+        function loadSection(id, file) {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) throw new Error('Error loading ' + file);
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => console.error(error));
+        }
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            // No background color change on scroll, so no class added
+        });
+        // Load external sections
+        loadSection('about', 'about.html');
+        loadSection('services', 'services.html');
+        loadSection('contact', 'contact.html');
+
+        function setHeroHeight() {
+            const image = new Image();
+            image.src = './assets/images/backgroundmain.svg'; // Path to your background image
+            image.onload = function() {
+                const aspectRatio = image.width / image.height; // Get aspect ratio
+                const windowWidth = window.innerWidth;
+                const newHeight = windowWidth / aspectRatio; // Calculate height based on aspect ratio
+                document.getElementById('hero').style.height = `${newHeight - 10}px`; // Set height of hero section
+            };
+          }
+          
+          // Call the function to set the hero section height on page load
+          window.onload = setHeroHeight;
+          
+          // Optional: Update on window resize
+          window.onresize = setHeroHeight;
+    </script>
+    <script src="./assets/js/navbar.js"></script>
+</body>
+</html>

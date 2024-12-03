@@ -1,0 +1,246 @@
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.container {
+  width: 90%;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: flex-start; /* Align content at the top */
+  justify-content: flex-start; /* Align content to the left */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  padding-top: 120px; /* Ensure content is below the navbar (adjust if navbar height changes) */
+}
+
+/* Background element */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/backgroundmain.svg') no-repeat center center/cover;
+  filter: brightness(50%); /* Apply brightness filter to background */
+  z-index: -1; /* Keep the background behind the content */
+}
+
+/* Content element */
+.hero-content {
+  position: relative; /* Ensure content stays on top */
+  text-align: left; /* Align text to the left */
+  color: white;
+  width: 100%; /* Make sure content spans the entire section width */
+  padding: 20px; /* Padding inside the content area */
+  z-index: 1; /* Keep content above the background */
+}
+
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-buttons .btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: background 0.3s;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #00d9ff;
+}
+
+.btn-secondary {
+  background-color: #1a1a1a;
+  border: 1px solid #00d9ff;
+}
+
+.btn:hover {
+  background-color: #0086c1;
+}
+
+/* Sections */
+.about-section, .services-section, .contact-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-section h2, .services-section h2, .contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00d9ff;
+}
+
+/* Transparent Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    transition: top 0.3s ease-in-out; /* Smooth transition for hiding/showing */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white; /* White text for logo */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add slight shadow for contrast */
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white; /* White text for links */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Subtle shadow for better contrast */
+}
+
+.nav-links a:hover {
+  color: #00d9ff; /* Accent color when hovering */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #1a1a1a, #333333);
+  color: #ffffff;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00d9ff;
+}
+
+.contact-section form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #00d9ff;
+}
+
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 1rem;
+  resize: none;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  outline: none;
+  border-color: #00d9ff;
+}
+
+.contact-section button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  background-color: #00d9ff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-section button:hover {
+  background-color: #0086c1;
+}
+
+/* Footer */
+.footer {
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #999999;
+}
+
+
+/* Add Navbar Scroll Effect */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.scrolled .navbar {
+  background-color: rgba(0, 0, 0, 0.8); /* Darken navbar on scroll */
+}
+
+/* Update form input and button for better user feedback */
+input:focus, textarea:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(0, 217, 255, 0.6);
+}
+
+button[type="submit"]:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
