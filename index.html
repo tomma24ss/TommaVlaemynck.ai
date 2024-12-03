@@ -30,7 +30,8 @@
             <div class="hero-content"> <!-- Content element -->
                 <div class="container">
                     <h1>Data & AI Consultancy</h1>
-                    <p>Innovative solutions for data-driven decisions.</p>
+                    <h2>Unlock the Power of Your Data</h2>
+                    <p>Transform Insights into Action with Cutting-Edge AI & Automation Solutions</p>
                     <div class="cta-buttons">
                         <a href="#contact" class="btn btn-primary">Let's Talk</a>
                         <a href="#services" class="btn btn-secondary">Learn More</a>
@@ -70,24 +71,8 @@
         loadSection('about', 'about.html');
         loadSection('services', 'services.html');
         loadSection('contact', 'contact.html');
-
-        function setHeroHeight() {
-            const image = new Image();
-            image.src = './assets/images/backgroundmain.svg'; // Path to your background image
-            image.onload = function() {
-                const aspectRatio = image.width / image.height; // Get aspect ratio
-                const windowWidth = window.innerWidth;
-                const newHeight = windowWidth / aspectRatio; // Calculate height based on aspect ratio
-                document.getElementById('hero').style.height = `${newHeight - 10}px`; // Set height of hero section
-            };
-          }
-          
-          // Call the function to set the hero section height on page load
-          window.onload = setHeroHeight;
-          
-          // Optional: Update on window resize
-          window.onresize = setHeroHeight;
     </script>
     <script src="./assets/js/navbar.js"></script>
+    <script src="./assets/js/background.js"></script>
 </body>
 </html>

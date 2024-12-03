@@ -35,7 +35,7 @@ body {
   right: 0;
   bottom: 0;
   background: url('../images/backgroundmain.svg') no-repeat center center/cover;
-  filter: brightness(50%); /* Apply brightness filter to background */
+  filter: brightness(40%); /* Apply brightness filter to background */
   z-index: -1; /* Keep the background behind the content */
 }
 
@@ -51,25 +51,46 @@ body {
 
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 4rem; /* Larger font for hero headline */
+  font-family: 'Montserrat', sans-serif; /* Clean, modern font */
+  font-weight: 700;
   margin-bottom: 20px;
+  text-transform: uppercase; /* Give it a bold, assertive style */
+  letter-spacing: 2px; /* Improve readability */
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for contrast */
 }
-
+.hero-content h2 {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif; /* More neutral font for subheading */
+  font-weight: 400;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.8); /* Slightly faded subheading */
+  line-height: 1.4;
+}
 .hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1.25rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9); /* Slightly lighter text */
 }
 
 .cta-buttons .btn {
-  padding: 10px 20px;
+  padding: 12px 24px;
   margin: 10px;
   border: none;
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
-  transition: background 0.3s;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.3s ease;
   border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
+
 
 .btn-primary {
   background-color: #00d9ff;
@@ -105,6 +126,7 @@ body {
     z-index: 1000;
     background-color: transparent;
     transition: top 0.3s ease-in-out; /* Smooth transition for hiding/showing */
+    padding: 20px 0;
 }
 
 .navbar .container {
