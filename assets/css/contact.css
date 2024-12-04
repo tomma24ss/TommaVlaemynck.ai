@@ -1,0 +1,138 @@
+/* Contact Section */
+.contact-section {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #1a1a1a, #333333);
+  color: #ffffff;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00d9ff;
+  text-transform: uppercase;
+}
+
+/* Contact Info */
+.contact-info {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #00d9ff;
+}
+
+.contact-info a {
+  color: #00d9ff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Form Styling */
+.contact-section form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #00d9ff;
+}
+
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 1rem;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  outline: none;
+  border-color: #00d9ff;
+}
+
+.contact-section button {
+  display: inline-block;
+  padding: 12px 25px;
+  border: none;
+  background-color: #00d9ff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-section button:hover {
+  background-color: #0086c1;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-info p {
+    font-size: 1rem;
+  }
+
+  .contact-section form {
+    max-width: 90%; /* Reduce form width on smaller screens */
+    margin: 0 auto;
+  }
+
+  .contact-section input,
+  .contact-section textarea {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+
+  .contact-section button {
+    font-size: 0.9rem; /* Adjust button font size */
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section h2 {
+    font-size: 2rem; /* Smaller heading size */
+  }
+
+  .contact-info p {
+    font-size: 0.9rem; /* Smaller font size for contact info */
+  }
+
+  .contact-section form {
+    max-width: 100%; /* Full width form */
+    padding: 0 10px; /* Add padding on sides for small screens */
+  }
+
+  .contact-section input,
+  .contact-section textarea {
+    padding: 8px; /* Smaller padding for inputs */
+  }
+
+  .contact-section button {
+    font-size: 0.85rem; /* Slightly smaller button */
+    padding: 8px 15px; /* Adjust button padding */
+  }
+}

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/service.css">
     <link rel="stylesheet" href="assets/css/scrolbar.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 </head>
@@ -14,24 +15,36 @@
     <nav class="navbar">
         <div class="container">
             <a href="#hero" class="logo">
-                <!-- <img src="./assets/images/logo2.png" alt="Logo" class="logo-image">  -->
-                <span class="logo-text">Tomma Vlaemynck</span>
+            <span class="logo-text">Tomma Vlaemynck</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <!-- Menu Toggle Button for Small Screens -->
+            <button class="menu-toggle" id="menu-toggle">
+            &#9776;
+            </button>
+            <!-- Navbar Links -->
+            <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
+    <!-- Popup Menu for Small Screens -->
+    <div class="menu-popup" id="menu-popup">
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    </div>
     <main>
         <section id="hero" class="hero-section">
             <div class="hero-background"></div> <!-- Background element -->
             <div class="hero-content"> <!-- Content element -->
                 <div class="container">
                     <h1>Data & AI Consultancy</h1>
-                    <h2>Unlock the Power of Your Data</h2>
-                    <p>Transform Insights into Action with Cutting-Edge AI & Automation Solutions</p>
+                    <h2>Empower Your Business with Automation, AI and Intelligent Solutions</h2>
+                    <p>Streamline Processes, Unlock Insights, and Innovate with Tailored Data & AI Expertise</p>
                     <div class="cta-buttons">
                         <a href="#contact" class="btn btn-primary">Let's Talk</a>
                         <a href="#services" class="btn btn-secondary">Learn More</a>
@@ -41,7 +54,95 @@
         </section>
         <!-- Section Placeholders -->
         <div id="about"></div>
-        <div id="services"></div>
+        <div class="services-section">
+            <div class="container">
+                <h2>My Services</h2>
+                <div class="services-grid">
+                    <div class="service">
+                        <div class="service-description">
+                            <h3>Data Analytics and Reporting</h3>
+                            <hr>
+                            <p data-info="Ensure data is accurate, relevant, and ready for analysis by addressing inconsistencies and integrating multiple sources.">Data collection, cleaning, and preprocessing.</p>
+                            <p data-info="Discover patterns, trends, and insights in your data with advanced visual and statistical methods.">Exploratory data analysis (EDA).</p>
+                            <p data-info="User-friendly visualizations to empower decision-making.">Generating visual reports and dashboards.</p>
+                            <p data-info="Build scalable workflows to streamline and accelerate your data processes.">Automation of data pipelines.</p>
+                            <div class="tooltip"></div>
+                        </div>
+                        <div class="service-icons">
+                            <img src="assets/images/icons/python.png" alt="Python" class="service-icon">
+                            <img src="assets/images/icons/pandas.png" alt="Pandas" class="service-icon">
+                            <img src="assets/images/icons/csv.png" alt="Csv" class="service-icon">
+                            <img src="assets/images/icons/matplotlib.png" alt="Matplotlib" class="service-icon">
+                            <img src="assets/images/icons/txt.svg" alt="Txt" class="service-icon">
+                            <img src="assets/images/icons/mssql.png" alt="Matplotlib" class="service-icon">
+                            <img src="assets/images/icons/postgressql.png" alt="Matplotlib" class="service-icon">
+                            <img src="assets/images/icons/mysql.webp" alt="Matplotlib" class="service-icon">
+                        </div>
+                    </div>
+            
+                    <div class="service">
+                        <div class="service-description">
+                            <h3>Automation and Workflow Optimization</h3>
+                            <hr>
+                            <p data-info="Custom scripts tailored to reduce manual work, improve efficiency, and minimize errors.">
+                                Streamline workflows with automation scripts.</p>
+                            <p data-info="Leverage machine learning and AI tools to optimize decision-making and operational flows.">
+                                Integrate AI models into your processes.</p>
+                            <p data-info="Harness data scraping and API integration to build robust, intelligent automation workflows.">
+                                Combine scraping and APIs for advanced automation.</p>
+                            <div class="tooltip"></div>
+                        </div>
+                        <div class="service-icons">
+                            <img src="assets/images/icons/python.png" alt="Python" class="service-icon">
+                            <img src="assets/images/icons/docker.png" alt="Python" class="service-icon">
+                            <i class="fas fa-cogs" title="Automation" class="service-icon"></i>
+                        </div>
+                    </div>
+                
+                    <div class="service">
+                        <div class="service-description">
+                            <h3>Machine Learning and AI Development</h3>
+                            <hr>
+                            <p data-info="Harness historical data to forecast trends, outcomes, and key metrics for strategic decision-making.">
+                                Predictive modeling and analytics.</p>
+                            <p data-info="Design and deploy AI models that integrate seamlessly with your existing systems and workflows.">
+                                Building and deploying machine learning models.</p>
+                            <p data-info="Fine-tune neural networks for maximum performance in image recognition, NLP, and more.">
+                                Optimize deep learning models.</p>
+                            <p data-info="Customize large language models for tasks like content generation, customer service automation, or business-specific applications.">
+                                Large Language Models (LLMs) implementation and fine-tuning.</p>
+                        </div>
+                        <div class="service-icons">
+                            <img src="assets/images/icons/python.png" alt="Python" class="service-icon">
+                            <img src="assets/images/icons/keras.png" alt="Python" class="service-icon">
+                            <img src="assets/images/icons/huggingface.png" alt="Python" class="service-icon">
+                            <img src="assets/images/icons/openai.png" alt="Python" class="service-icon">
+                            <img src="assets/images/icons/tensorflow.png" alt="Python" class="service-icon">
+                            <img src="assets/images/icons/pytorch.png" alt="Python" class="service-icon">
+                        </div>
+                    </div>
+                
+                    <div class="service">
+                        <div class="service-description">
+                            <h3>Computer Vision and Image Processing</h3>
+                            <hr>
+                            <p data-info="Identify objects, faces, keypoints, poses or specific features within images for diverse applications like security, retail, and healthcare.">
+                                Object detection and keypoint detection.</p>
+                            <p data-info="Analyze video streams to detect actions, anomalies, or events in real-time or post-processing.">
+                                Video processing for event detection and analytics.</p>
+                            <p data-info="Classify each pixel in an image to delineate objects, regions, or environments.">
+                                Semantic Segmentation</p>
+                        </div>
+                        <div class="service-icons">
+                            <img src="assets/images/icons/python.png" alt="Python" class="service-icon">
+                            <img src="assets/images/icons/ultralytics.svg" alt="Python" class="service-icon">
+                            <img src="assets/images/icons/\/opencv.png" alt="Python" class="service-icon">
+                            <i class="fas fa-video" title="Video Processing" class="service-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="contact"></div>
     </main>
     <footer class="footer">
@@ -51,27 +152,7 @@
     </footer>
 
     <!-- JavaScript to Load Sections -->
-    <script>
-        function loadSection(id, file) {
-            fetch(file)
-                .then(response => {
-                    if (!response.ok) throw new Error('Error loading ' + file);
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById(id).innerHTML = data;
-                })
-                .catch(error => console.error(error));
-        }
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            // No background color change on scroll, so no class added
-        });
-        // Load external sections
-        loadSection('about', 'about.html');
-        loadSection('services', 'services.html');
-        loadSection('contact', 'contact.html');
-    </script>
+    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/navbar.js"></script>
     <script src="./assets/js/background.js"></script>
 </body>
