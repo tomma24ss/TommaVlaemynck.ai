@@ -10,10 +10,6 @@ function loadSection(id, file, callback) {
       })
       .catch(error => console.error(error));
 }
-window.addEventListener('scroll', function () {
-  const navbar = document.querySelector('.navbar');
-  // No background color change on scroll, so no class added
-});
 // Load external sections
 loadSection('about', 'about.html');
 loadSection('contact', 'contact.html');
@@ -76,4 +72,18 @@ document.addEventListener("DOMContentLoaded", () => {
   function isSmallScreen() {
     return window.innerWidth <= 1000; // Define breakpoint for small screens
   }
+});
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+          targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+          });
+      }
+  });
 });

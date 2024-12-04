@@ -43,6 +43,7 @@
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
+  position: relative;
 }
 
 .contact-section label {
@@ -73,7 +74,8 @@
 }
 
 .contact-section button {
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
   padding: 12px 25px;
   border: none;
   background-color: #00d9ff;
