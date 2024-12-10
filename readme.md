@@ -72,6 +72,11 @@ project-root/
 - **Data Visualization**: Matplotlib and Pandas.
 - **Database Systems**: MySQL, PostgreSQL, MSSQL.
 
+## Projects I've Worked On
+- Cow Tracking and Behavior Identification: Designed and implemented AI models to track livestock movements and analyze behavioral patterns for optimized farm management.
+- Aviation Price Analysis: Scraped and analyzed aviation company data to provide insights into ticket pricing trends and market competition.
+- Smart Home Green Energy Automation: Developed a system to optimize energy consumption based on green energy availability and cost efficiency.
+- Spam Detection AI Bots: Built and fine-tuned machine learning models to classify messages and emails as spam or non-spam.
 ---
 
 ## How to Run
