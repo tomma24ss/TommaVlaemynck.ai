@@ -1,140 +1,114 @@
 /* Contact Section */
 .contact-section {
-  padding: 60px 20px;
-  background: linear-gradient(to bottom, #1a1a1a, #333333);
-  color: #ffffff;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(0, 134, 193, 0.04) 50%, var(--bg-primary) 100%);
+  color: var(--text-primary);
   text-align: center;
 }
 
 .contact-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #00d9ff;
-  text-transform: uppercase;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
 }
 
-/* Contact Info */
 .contact-info {
   margin-bottom: 40px;
-  text-align: center;
 }
 
 .contact-info p {
-  font-size: 1.2rem;
-  margin: 10px 0;
+  font-size: 1.05rem;
+  margin: 12px 0;
+  color: var(--text-muted);
 }
 
 .contact-info i {
   margin-right: 10px;
-  color: #00d9ff;
+  color: var(--accent);
 }
 
 .contact-info a {
-  color: #00d9ff;
+  color: var(--accent);
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .contact-info a:hover {
-  text-decoration: underline;
+  color: var(--accent-hover);
 }
 
-/* Form Styling */
 .contact-section form {
-  max-width: 600px;
+  max-width: 560px;
   margin: 0 auto;
   text-align: left;
-  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  backdrop-filter: blur(8px);
 }
 
 .contact-section label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #00d9ff;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 .contact-section input,
 .contact-section textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px 14px;
   margin-bottom: 20px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: inherit;
   resize: none;
   box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-section input::placeholder,
+.contact-section textarea::placeholder {
+  color: rgba(240, 244, 248, 0.3);
 }
 
 .contact-section input:focus,
 .contact-section textarea:focus {
   outline: none;
-  border-color: #00d9ff;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .contact-section button {
   display: block;
-  margin: 0 auto;
-  padding: 12px 25px;
+  width: 100%;
+  padding: 14px 28px;
   border: none;
-  background-color: #00d9ff;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 0 20px var(--accent-glow);
 }
 
 .contact-section button:hover {
-  background-color: #0086c1;
-  transform: scale(1.05);
+  background: var(--accent-hover);
+  box-shadow: 0 0 32px var(--accent-glow-strong);
+  transform: translateY(-1px);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .contact-info p {
-    font-size: 1rem;
-  }
-
   .contact-section form {
-    max-width: 90%; /* Reduce form width on smaller screens */
-    margin: 0 auto;
-  }
-
-  .contact-section input,
-  .contact-section textarea {
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
-  }
-
-  .contact-section button {
-    font-size: 0.9rem; /* Adjust button font size */
-    padding: 10px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-section h2 {
-    font-size: 2rem; /* Smaller heading size */
-  }
-
-  .contact-info p {
-    font-size: 0.9rem; /* Smaller font size for contact info */
-  }
-
-  .contact-section form {
-    max-width: 100%; /* Full width form */
-    padding: 0 10px; /* Add padding on sides for small screens */
-  }
-
-  .contact-section input,
-  .contact-section textarea {
-    padding: 8px; /* Smaller padding for inputs */
-  }
-
-  .contact-section button {
-    font-size: 0.85rem; /* Slightly smaller button */
-    padding: 8px 15px; /* Adjust button padding */
+    max-width: 100%;
+    padding: 24px 20px;
   }
 }

@@ -1,96 +1,105 @@
 /* Services Section */
 .services-section {
-  padding: 60px 20px;
-  background-color: #121212;
-  color: #ffffff;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   text-align: center;
 }
 
 .services-section h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #00d9ff;
+  color: var(--text-primary);
 }
 
-/* Grid Layout for Services */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 24px;
+  margin-top: 40px;
 }
 
-/* Service Block */
 .service {
   display: flex;
   flex-direction: column;
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  backdrop-filter: blur(8px);
 }
 
-/* Description Section */
+.service:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 0 32px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
 .service-description {
-  background: linear-gradient(145deg, #1e1e1e, #292929);
-  border-radius: 10px;
-  padding: 20px 30px; /* Increased padding for better spacing */
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
   margin-bottom: 20px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
   text-align: left;
-  color: #ffffff; /* Ensure the text is pure white */
-  line-height: 1.8; /* Improve readability */
+  line-height: 1.8;
+  flex: 1;
 }
-
 
 .service-description h3 {
-  font-size: 1.5rem;
-  color: #00d9ff;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 12px;
 }
 
 .service-description hr {
   border: 0;
-  height: 2px;
-  background: #00d9ff;
-  margin: 10px 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin: 12px 0 16px;
 }
 
-/* Enhanced Bullet Points */
 .service-description p {
-  margin: 5px 0;
-  color: #fbfbfb; /* Slightly muted white for better readability */
-  position: relative; /* Allows pseudo-element positioning */
-  padding-left: 20px; /* Space for bullet point */
+  margin: 6px 0;
+  color: var(--text-muted);
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.95rem;
+  cursor: default;
+  transition: color 0.2s;
+}
+
+.service-description p:hover {
+  color: var(--text-primary);
 }
 
 .service-description p::before {
-  content: "•"; /* Unicode for a dot bullet */
-  color: #00d9ff; /* Accent color for the bullet */
-  font-size: 1.2rem; /* Slightly larger for emphasis */
+  content: "›";
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 600;
   position: absolute;
-  left: 0; /* Align with padding-left */
-  top: 0; /* Align to text baseline */
-  line-height: 1; /* Ensures proper alignment */
+  left: 0;
+  top: -1px;
 }
-/* Tooltop */
+
 .tooltip {
   display: none;
   position: absolute;
-  background-color: rgba(0, 217, 255, 0.95); /* Accent color */
-  color: #ffffff;
-  padding: 15px 20px;
-  border: 1px solid #00d9ff;
+  background: rgba(10, 14, 20, 0.95);
+  color: var(--text-primary);
+  padding: 12px 16px;
+  border: 1px solid var(--border-strong);
   border-radius: 10px;
-  font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
   text-align: left;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  max-width: 320px;
+  white-space: normal;
   z-index: 1000;
   pointer-events: none;
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-6px);
 }
 
 .tooltip.active {
@@ -98,52 +107,49 @@
   opacity: 1;
   transform: translateY(0);
 }
-/* Icons Section */
+
 .service-icons {
   display: flex;
-  justify-content: center; /* Center-align icons */
-  gap: 25px; /* Space between icons */
-  flex-wrap: wrap; /* Wrap to next line if necessary */
-  margin-top: 20px; /* Space between description and icons */
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 8px;
 }
+
 .service-icons img,
 .service-icons i {
-  max-height: 60px; /* Constrain height for readability */
-  width: auto; /* Maintain aspect ratio for images */
-  font-size: 60px; /* Match the height of images */
-  line-height: 60px; /* Center align icon content vertically */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 5px; /* Optional: Add padding for spacing */
-  background-color: rgba(255, 255, 255, 1); /* White background for visibility */
-  border-radius: 8px; /* Rounded corners for consistency */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  display: inline-flex; /* Ensures alignment with images */
-  justify-content: center; /* Center-align Font Awesome icons */
-  align-items: center; /* Center-align Font Awesome icons */
-  flex-shrink: 0; /* Prevent shrinking */
-  color: #000000; 
+  max-height: 44px;
+  width: auto;
+  font-size: 44px;
+  line-height: 44px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: #111;
 }
 
 .service-icons img:hover,
 .service-icons i:hover {
-  transform: scale(1.1); /* Slight zoom effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 217, 255, 0.2);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .service-description {
-    text-align: center; /* Center-align text on smaller screens */
-  }
-
-  .service-icons {
-    gap: 15px; /* Reduce gap between icons on smaller screens */
+    text-align: left;
   }
 
   .service-icons img,
   .service-icons i {
-    max-height: 50px; /* Smaller size for mobile */
-    font-size: 50px; /* Match the reduced image height */
-    line-height: 50px;
+    max-height: 38px;
+    font-size: 38px;
+    line-height: 38px;
   }
 }
