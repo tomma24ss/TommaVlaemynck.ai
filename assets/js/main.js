@@ -16,6 +16,9 @@ loadSection('contact', 'contact.html');
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  const yearEl = document.getElementById('copyright-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
   const menuToggle = document.getElementById('menu-toggle');
   const menuPopup = document.getElementById('menu-popup');
   menuPopup.style.display = 'none';
