@@ -38,7 +38,6 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 24px;
-  margin-bottom: 20px;
   text-align: left;
   line-height: 1.8;
   flex: 1;
@@ -108,48 +107,8 @@
   transform: translateY(0);
 }
 
-.service-icons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: auto;
-  padding-top: 8px;
-}
-
-.service-icons img,
-.service-icons i {
-  max-height: 44px;
-  width: auto;
-  font-size: 44px;
-  line-height: 44px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  padding: 6px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  color: #111;
-}
-
-.service-icons img:hover,
-.service-icons i:hover {
-  transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 217, 255, 0.2);
-}
-
 @media (max-width: 768px) {
   .service-description {
     text-align: left;
-  }
-
-  .service-icons img,
-  .service-icons i {
-    max-height: 38px;
-    font-size: 38px;
-    line-height: 38px;
   }
 }
