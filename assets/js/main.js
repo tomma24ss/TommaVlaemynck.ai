@@ -6,7 +6,8 @@ function loadSection(id, file, callback) {
       })
       .then(data => {
           document.getElementById(id).innerHTML = data;
-          if (callback) callback(); // Execute the callback after content is loaded
+          window.dispatchEvent(new Event('page-content-updated'));
+          if (callback) callback();
       })
       .catch(error => console.error(error));
 }

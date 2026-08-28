@@ -1,9 +1,10 @@
 /**
- * Subtle ambient dots across the full page — lighter than the hero network.
+ * Subtle ambient dots across the full page — scrolls with document, not the viewport.
  */
 (function () {
   const canvas = document.getElementById('ambient-canvas');
-  if (!canvas) return;
+  const pageBackground = canvas && canvas.parentElement;
+  if (!canvas || !pageBackground) return;
 
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
@@ -17,17 +18,41 @@
   let height = 0;
   let particles = [];
 
+  function getPageHeight() {
+    return Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      window.innerHeight
+    );
+  }
+
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    width = window.innerWidth;
-    height = window.innerHeight;
-    if (width === 0 || height === 0) return;
+    const nextWidth = window.innerWidth;
+    const nextHeight = getPageHeight();
+    if (nextWidth === 0 || nextHeight === 0) return;
+
+    const heightRatio = height > 0 ? nextHeight / height : 1;
+
+    width = nextWidth;
+    height = nextHeight;
+    pageBackground.style.height = `${height}px`;
 
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    if (particles.length === 0) initParticles();
+    if (particles.length === 0) {
+      initParticles();
+      return;
+    }
+
+    if (heightRatio !== 1) {
+      particles.forEach((p) => {
+        p.y *= heightRatio;
+        p.y = Math.max(0, Math.min(height, p.y));
+      });
+    }
   }
 
   function initParticles() {
@@ -117,6 +142,13 @@
     }
 
     window.addEventListener('resize', resize);
+    window.addEventListener('page-content-updated', resize);
+
+    if (typeof ResizeObserver !== 'undefined') {
+      const observer = new ResizeObserver(() => resize());
+      observer.observe(document.body);
+    }
+
     document.addEventListener('visibilitychange', () => {
       if (!reducedMotion && document.visibilityState === 'visible') {
         requestAnimationFrame(loop);
