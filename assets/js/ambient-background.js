@@ -10,8 +10,8 @@
   if (!ctx) return;
 
   const COLOR = '0, 217, 255';
-  const PARTICLE_COUNT = 14;
-  const CONNECT_DIST = 110;
+  const PARTICLE_COUNT = 32;
+  const CONNECT_DIST = 125;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let width = 0;
@@ -98,7 +98,7 @@
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(q.x, q.y);
-        ctx.strokeStyle = `rgba(${COLOR}, ${0.03 + fade * 0.05})`;
+        ctx.strokeStyle = `rgba(${COLOR}, ${0.04 + fade * 0.06})`;
         ctx.lineWidth = 0.6;
         ctx.stroke();
       }
@@ -106,7 +106,7 @@
 
     particles.forEach((p) => {
       const twinkle = 0.55 + 0.45 * Math.sin(p.phase);
-      const alpha = 0.08 + twinkle * 0.1;
+      const alpha = 0.1 + twinkle * 0.12;
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius * 2.2, 0, Math.PI * 2);
