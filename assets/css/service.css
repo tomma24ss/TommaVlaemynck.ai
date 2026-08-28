@@ -1,6 +1,6 @@
 /* Services Section */
 .services-section {
-  background: var(--bg-primary);
+  background: transparent;
   color: var(--text-primary);
   text-align: center;
 }

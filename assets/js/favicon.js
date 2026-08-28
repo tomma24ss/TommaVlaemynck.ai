@@ -1,5 +1,5 @@
 /**
- * Animated tab icon — mini node network with pulsing glow, matching the hero background.
+ * Animated tab icon — letter T formed by pulsing connected dots.
  */
 (function () {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -21,17 +21,20 @@
   if (!ctx) return;
 
   const nodes = [
-    { x: 16, y: 7, r: 2 },
-    { x: 7, y: 23, r: 1.75 },
-    { x: 25, y: 23, r: 1.75 },
-    { x: 16, y: 15, r: 2.75 },
+    { x: 9, y: 8, r: 1.75 },
+    { x: 13, y: 8, r: 1.75 },
+    { x: 16, y: 8, r: 2.25 },
+    { x: 19, y: 8, r: 1.75 },
+    { x: 23, y: 8, r: 1.75 },
+    { x: 16, y: 12, r: 1.75 },
+    { x: 16, y: 16, r: 1.75 },
+    { x: 16, y: 20, r: 1.75 },
+    { x: 16, y: 23, r: 1.75 },
   ];
 
   const edges = [
-    [0, 3],
-    [1, 3],
-    [2, 3],
-    [1, 2],
+    [0, 1], [1, 2], [2, 3], [3, 4],
+    [2, 5], [5, 6], [6, 7], [7, 8],
   ];
 
   let frame = 0;
@@ -60,8 +63,8 @@
     ctx.fill();
 
     edges.forEach(([from, to], index) => {
-      const pulse = 0.25 + 0.75 * (0.5 + 0.5 * Math.sin(frame * 0.06 + index * 1.4));
-      ctx.strokeStyle = `rgba(0, 217, 255, ${0.12 + pulse * 0.38})`;
+      const pulse = 0.2 + 0.8 * (0.5 + 0.5 * Math.sin(frame * 0.07 - index * 0.9));
+      ctx.strokeStyle = `rgba(0, 217, 255, ${0.1 + pulse * 0.35})`;
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(nodes[from].x, nodes[from].y);
@@ -70,8 +73,8 @@
     });
 
     nodes.forEach((node, index) => {
-      const hubBoost = index === 3 ? 0.15 : 0;
-      const intensity = 0.45 + 0.55 * (0.5 + 0.5 * Math.sin(frame * 0.07 + index * 1.1)) + hubBoost;
+      const junctionBoost = index === 2 ? 0.12 : 0;
+      const intensity = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(frame * 0.07 - index * 0.75)) + junctionBoost;
       drawNode(node, Math.min(intensity, 1));
     });
 

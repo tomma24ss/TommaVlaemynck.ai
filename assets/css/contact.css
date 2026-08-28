@@ -1,6 +1,6 @@
 /* Contact Section */
 .contact-section {
-  background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(0, 134, 193, 0.04) 50%, var(--bg-primary) 100%);
+  background: transparent;
   color: var(--text-primary);
   text-align: center;
 }

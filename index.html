@@ -14,6 +14,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <canvas id="ambient-canvas" aria-hidden="true"></canvas>
     <nav class="navbar">
         <div class="container">
             <a href="#hero" class="logo">
@@ -94,7 +95,7 @@
                         <div class="service-description">
                             <h3>Platform &amp; Infrastructure Engineering</h3>
                             <hr>
-                            <p data-info="Containerized services deployed on Kubernetes with the networking, secrets, and scaling patterns production needs.">Kubernetes and Docker deployment on Azure.</p>
+                            <p data-info="Containerized services deployed on Kubernetes with the networking, secrets, and scaling patterns production needs.">Kubernetes and Docker deployment.</p>
                             <p data-info="Automated build, test, and release pipelines so systems stay maintainable as they grow.">CI/CD pipelines and automated operations.</p>
                             <p data-info="Relational stores, caching layers, and message-driven flows that hold up under real load.">Databases, caching, and event-driven architectures.</p>
                             <p data-info="Authentication, monitoring, rate limits, and hardening for systems that run in the real world.">Security, observability, and production hardening.</p>
@@ -126,6 +127,7 @@
         </div>
     </footer>
 
+    <script src="./assets/js/ambient-background.js"></script>
     <script src="./assets/js/favicon.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/navbar.js"></script>
